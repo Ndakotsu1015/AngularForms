@@ -1,0 +1,194 @@
+<form [formGroup]="employeeForm" 
+class="border border-info p-3 rounded-3 p-3"
+(ngSubmit)="registeremployeeFormsubmited()">
+    <div class="row g-0">
+        <div class="col text-center p-2 mb-3 bg-info">
+            <span class="fs-3"> Employee Record Form
+
+            </span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col mb-3">
+            <label for="fullname" class="form-label">
+                First Name
+            </label>
+            <input type="text" class="form-control"
+            id="first_name"
+            formControlName="first_name">
+
+            <div class="col">
+                <label for="fullname" 
+                class="form-label">
+                    Last Name
+                </label>
+                <input type="text" class="form-control"
+                id="last_name"
+                formControlName="last_name">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col mb-3">
+            <label for="contact_address" 
+            class="form-control">
+                Contact Adress
+            </label>
+            <input type="text" class="form-control"
+            id="contact_address"
+            formControlName="contact_address">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col mb-3">
+            <label for="" class="form-label">
+                Mobile NUmber
+            </label>
+            <input type="text" class="form-control"
+            id="mobile"
+            formControlName="mobile_phone">
+        </div>
+
+        <div class="col ps-3 mb-3 md-6">
+           <label for="dept" class="form-label">Department</label>
+            <div class="form form-inline mb-20 md-6">
+            <ng-select name="department_id"
+            class="form-control input-sm"  
+                id="department_id"
+                formControlName="department_id"
+            placeholder="Select department"
+            [items]="departments"
+            bindLabel="name"
+            bindValue="id"
+                > 
+               
+                <!-- <option 
+                *ngFor="let dept of departments" [value]="dept.id">
+                    {{dept.name}}
+                </option> -->
+            </ng-select> 
+            
+            <!-- <ng-select
+                id="department_id"
+                name="department_id"
+                
+                formControlName="department_id"
+                [items]="[departments]"
+                [addTag]="true"
+                [searchable]="false"
+                placeholder="Select Department"
+                bindLabel="name"
+                bindValue="id"
+                >
+                <ng-template ng-label-tmp let-item="item" let-clear="clear">
+                <span class="ng-value-icon right"> {{item.name}} </span>
+                <span class="ng-value-icon right" (click)="clear(item)" aria-hidden="true"></span>
+                </ng-template>
+                </ng-select> -->
+            </div>
+        </div>
+
+        <div class="row">
+        <div class="col ps-3 mb-3 md-6">
+            <label for="marital-status" class="form-label">Marital Status</label>
+             <div class="form form-inline mb-20 md-6">
+             <ng-select name="marital_status_id"
+              class="form-control input-sm" 
+                 id="marital_status_id"
+                 formControlName="marital_status_id"
+                placeholder="Select Marital Status"
+                [items] ="maritalStatuses"
+                bindLabel="name"
+                bindValue="id"
+                 > 
+                
+             </ng-select><br>
+             <div class="form form-inline mb-20 md-6">
+                <label for="marital-status" class="form-label">State of Origin</label>
+                <div class="form form-inline mb-20 md-6">
+                 <ng-select name="marital_status_id"
+                  class="form-control input-sm" 
+                     id="marital_status_id"
+                     formControlName="marital_status_id"
+                    placeholder="Select State of Origin"
+                    [items] ="maritalStatuses"
+                    bindLabel="name"
+                    bindValue="id"
+                     > 
+                    
+                 </ng-select>
+            </div>
+        </div>
+
+            
+                </div>
+        </div>
+    </div>
+</div>
+    <div class="row">
+    <div class="col mb-3">
+        <label for="DOB" class="form-label">
+            Date Of Birth
+        </label>
+            <input type="date" class="form-control datepicker"
+            id="dob"  required
+            formControlName="dob">
+</div>
+    <div class="col mb-3">
+        <label for="description" class="form-label">
+            Occupation
+        </label>
+        <textarea class="form-control mb-20"
+        id="decription"
+        formControlName="Occupation"></textarea>
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-6 offset-3">
+        <div class="d-grid">
+            <button type="submit" class="btn btn-primary">
+                Submit</button>
+        </div>
+    </div>
+</div>
+
+</form>
+
+        <!-- <div class="col ps-3 mb-3">
+            <div class="m-3">Gender</div>
+            <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input"
+                value="m" id="male"
+                formControlName="gender">
+                <label for="male" class="form-check-label">
+                    Male
+                </label>
+            </div>
+
+            <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input"
+                value="f" id="female"
+                formControlName="gender">
+                <label for="female" class="form-check-label">
+                    Female
+                </label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col mb-3">
+                <label for="description" class="form-label">
+                    Description
+                </label>
+                <textarea class="form-control mb-20"
+                id="decription"
+                formControlName="description"></textarea>
+            </div> -->
+
+         
